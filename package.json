@@ -1,0 +1,19 @@
+{
+  "name": "exalt-it-katas-frontjs",
+  "version": "1.0.0",
+  "description": "Exalt IT Katas Front JS",
+  "scripts": {
+    "install_react_email_junior": "(cd react_email_junior && npx create-react-app exalt)",
+    "install_react_middle": "(cd react_middle && npx create-react-app exalt)",
+    "install_react_cal_senior": "(cd react_cal_senior && npx create-react-app exalt)"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.17.1",
+    "jsonbox-node": "^1.0.7",
+    "node-fetch": "^2.6.1"
+  }
+}
