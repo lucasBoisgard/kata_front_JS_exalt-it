@@ -9,9 +9,9 @@ Ne vous précipitez pas sur le kata [email input débutant](/react_email_input_d
 ## A faire au choix
 
 
-Le [site de bières en ligne confirmé](/react_beer_shop_online_confirmed)
+Le [site de bières en ligne \(niveau confirmé\)](/react_beer_shop_online_confirmed)
 
-Ou pour les plus forts le [Rendering events on a calendar](/react_rendering_event_senior)
+Ou pour les plus forts le [Rendering events on a calendar \(niveau senior\)](/react_rendering_event_senior)
 
 Au plaisir de lire votre code !
 
