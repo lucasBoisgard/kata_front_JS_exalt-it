@@ -1,3 +1,7 @@
+#Email input component
+
+ATTENTION KATA FACILE, PAS DE CONSIDERATION DETERMINANTE POUR UN RECRUTEMENT
+
 ## Assignment
 
 You are going to build a React component allowing the user to input an email address, and displaying suggestions for the main providers as the user types.

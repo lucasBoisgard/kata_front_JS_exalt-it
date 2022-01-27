@@ -1,3 +1,5 @@
+# RENDERING EVENTS ON A CALENDAR
+
 ## The problem
 
 The problem consists in rendering events on a calendar, avoiding overlapping events to visually overlap.

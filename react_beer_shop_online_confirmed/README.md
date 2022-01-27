@@ -1,4 +1,4 @@
-# react-exam
+# ONLINE BEER SHOP KATA
 
 We do love __beer__ and we want to make an app to order some :beer: !
 
