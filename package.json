@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Exalt IT Katas Front JS",
   "scripts": {
-    "install_react_email_junior": "(cd react_email_junior && npx create-react-app exalt)",
-    "install_react_middle": "(cd react_middle && npx create-react-app exalt)",
-    "install_react_cal_senior": "(cd react_cal_senior && npx create-react-app exalt)"
+    "install_react_email_input_debutant": "(cd react_email_input_debutant && npx create-react-app exalt)",
+    "install_react_beer_shop_online_confirmed": "(cd react_beer_shop_online_confirmed && npx create-react-app exalt)",
+    "install_react_rendering_event_senior": "(cd react_rendering_event_senior && npx create-react-app exalt)"
   },
   "keywords": [],
   "author": "",
