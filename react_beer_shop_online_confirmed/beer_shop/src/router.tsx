@@ -1,21 +1,24 @@
 import Beers from './pages/Beers/Beers';
 import Beer from './pages/Beers/Beer';
 import { createBrowserRouter } from "react-router-dom";
-import Main from './pages/Main';
-import Card from './pages/card/Card';
+import Cart from './pages/cart/Cart';
 
 const Router = createBrowserRouter([
   {
     path: "/",
-    element: <Main />,
+    element: <Beers />,
   },
   {
-    path: "/Beers",
+    path: "Beers",
     element: <Beers />
   },
   {
-    path: "/Card",
-    element: <Card />
+    path: "Cart",
+    element: <Cart />
+  },
+  {
+    path:  "Beer/:id",
+    element: <Beer />
   }
 ]);
 
