@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import useCartStore from "../services/Zustand.service";
 import { Beer } from "../Types/Beer.interface";
-import { CartItem } from "../Types/Cart.interface";
+import { CartItemType } from "../Types/Cart.interface";
 import { State } from "../Types/Zustand.interface";
 
 type Props = {
@@ -14,7 +14,7 @@ const BeerCard = (props: Props) => {
 
     const handleUpdateQty = async (item: Beer, action: string = "") => {
         if (
-            cart.filter((cartItem: CartItem) => cartItem.item.id === item.id)
+            cart.filter((cartItem: CartItemType) => cartItem.item.id === item.id)
                 .length === 0
         ) {
             await add(item);
@@ -25,37 +25,40 @@ const BeerCard = (props: Props) => {
             );
             if (qty === 1 && action === "decr") {
                 await remove(item);
-            } else await update(item, action);
+            } else {
+                console.log(qty)
+                await update(item, action);
+            }
         }
     };
 
     useEffect(() => {
-        cart.map((beer: CartItem) => {
+        cart.map((beer: CartItemType) => {
             if (beer.item.id === props.beers.id) {
                 setQty(beer.qty);
             }
             return beer.qty;
         });
-    }, [cart, props]);
+    }, []);
 
     return (
         <div className='w-[300px] m-auto my-4 px-2'>
-            <div className='bg-amber-600 bg-opacity-50 shadow-xl rounded overflow-hidden border border-opacity-50 border-amber-600'>
+            <div className='bg-gray-800 bg-opacity-80 shadow-xl rounded overflow-hidden border border-opacity-50 border-gray-800'>
                 <div className='flex h-[250px]'>
                     <img
                         className='h-full px-4 py-2 bg-white'
                         src={props.beers.image_url}
                         alt=''
                     />
-                    <div className='m-2'>
-                        <p className='font-bold text-gray-800 m-2 text-[14px]'>
+                    <div className='m-auto'>
+                        <p className='font-bold text-gray-50 m-2 text-[14px]'>
                             {props.beers.name}
                         </p>
-                        <p className='text-[10px] m-2 font-light'>
+                        <p className='text-[10px] text-gray-200 m-2 font-light'>
                           {props.beers.description.substring(0, 200)} 
                           {props.beers.description.length > 200 ? "..."  : ""}
                         </p>
-                        <p className='text-gray-700 m-2 font-[15px]'>
+                        <p className='text-gray-200 m-2 font-extralight'>
                             {props.beers.boil_volume.value / 100}{" "}
                             {props.beers.boil_volume.unit}
                         </p>
@@ -95,7 +98,7 @@ const BeerCard = (props: Props) => {
                             </button>
                         </div>
                     )}
-                    <button className='  flex hover:opacity-[100] bg-white w-1/2 '>
+                    <button className='flex hover:opacity-[100] bg-white w-1/2 '>
                     <a className="hover:bg-slate-300 w-full pt-3 h-full" href={"/Beer/" + props.beers.id}>
                         DETAILS
                     </a>

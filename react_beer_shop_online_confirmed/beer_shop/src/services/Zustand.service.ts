@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
-import { Beer, CartItem, State } from "../Types/Interface";
+import { Beer, CartItemType, State } from "../Types/Interface";
 
 const useCartStore = create<State>()(
     persist(
@@ -14,7 +14,7 @@ const useCartStore = create<State>()(
             // Increase/Decrease quantity of beer inside cart
             update: (item: Beer, action: string = "inc" || "decr") =>
                 set((state: State): Partial<State> => {
-                    let cart = state.cart.map((value: CartItem): CartItem => {
+                    let cart = state.cart.map((value: CartItemType): CartItemType => {
                         if (value.item === item) {
                             action === "inc" ? value.qty++ : value.qty--;
                         }
@@ -26,7 +26,7 @@ const useCartStore = create<State>()(
             remove: (item: Beer) =>
                 set((state: State) => {
                     let cart = state.cart;
-                    state.cart.forEach((data: CartItem, index: number) => {
+                    state.cart.forEach((data: CartItemType, index: number) => {
                         if (data.item.id === item.id) {
                             cart.splice(index, 1);
                         }

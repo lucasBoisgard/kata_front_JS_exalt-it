@@ -1,5 +1,5 @@
 import { Beer } from './Beer.interface';
-export interface CartItem {
+export interface CartItemType {
   item: Beer,
   qty: number
 }
